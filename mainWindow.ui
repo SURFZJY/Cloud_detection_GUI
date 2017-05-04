@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1029</width>
+    <height>914</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>云检测算法展示平台</string>
+  </property>
+  <property name="statusTip">
+   <string>选择图片加载到显示区域</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>180</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 36pt &quot;Agency FB&quot;;</string>
+    </property>
+    <property name="text">
+     <string>云量</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>430</y>
+      <width>491</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="toolTip">
+        <string>基于B/R的值来区分：B/R&lt;Threshold为云，否则为天空</string>
+       </property>
+       <property name="statusTip">
+        <string>基于B/R的值来区分：B/R&lt;Threshold为云，否则为天空</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;仿宋&quot;;</string>
+       </property>
+       <property name="text">
+        <string>阈值法2 B/R</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="toolTip">
+        <string>基于B-R的值来区分：B-R&gt;Threshold为云，否则为天空</string>
+       </property>
+       <property name="statusTip">
+        <string>基于B-R的值来区分：B-R&gt;Threshold为云，否则为天空</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;仿宋&quot;;</string>
+       </property>
+       <property name="text">
+        <string>阈值法3 B-R</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSpinBox" name="spinBox">
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;Agency FB&quot;;</string>
+       </property>
+       <property name="value">
+        <number>30</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="toolTip">
+        <string>基于R/B的值来区分：R/B&gt;Threshold为云，否则为天空</string>
+       </property>
+       <property name="statusTip">
+        <string>基于R/B的值来区分：R/B&gt;Threshold为云，否则为天空</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;仿宋&quot;;</string>
+       </property>
+       <property name="text">
+        <string>阈值法1 R/B</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QDoubleSpinBox" name="doubleSpinBox">
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;Agency FB&quot;;</string>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>2.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>0.600000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="toolTip">
+        <string>基于R-B的值来区分：用Otsu法计算出合理阈值来区分云和天空</string>
+       </property>
+       <property name="statusTip">
+        <string>基于R-B的值来区分：用Otsu法计算出合理阈值来区分云和天空</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;仿宋&quot;;</string>
+       </property>
+       <property name="text">
+        <string>基于R-B的自适应阈值法</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QPushButton" name="pushButton">
+       <property name="toolTip">
+        <string>保存分割后的图片</string>
+       </property>
+       <property name="statusTip">
+        <string>保存分割后的图片</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;华文细黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>保存</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;Agency FB&quot;;</string>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>2.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.300000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="2">
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="toolTip">
+        <string>基于图割理论区分云和天空</string>
+       </property>
+       <property name="statusTip">
+        <string>基于图割理论区分云和天空</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;仿宋&quot;;</string>
+       </property>
+       <property name="text">
+        <string>图割法</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;华文细黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>打开</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;仿宋&quot;;</string>
+       </property>
+       <property name="text">
+        <string>基于R/B的自适应阈值法</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>180</y>
+      <width>251</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 2px;
+border-style: solid;
+border-color: rdb(0,0,0);
+font: 36pt &quot;仿宋&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>481</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: rdb(0,0,0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>481</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: rdb(0,0,0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1029</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/normal/icons/打开.png</normaloff>:/normal/icons/打开.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/normal/icons/保存.png</normaloff>:/normal/icons/保存.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/normal/icons/退出.png</normaloff>:/normal/icons/退出.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/normal/icons/关于.png</normaloff>:/normal/icons/关于.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
